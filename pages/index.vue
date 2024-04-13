@@ -24,7 +24,7 @@ definePageMeta({
 
   })
   const removePost=(id)=>{
-    const index=posts.value.findIndex((post)=>post.id==id)
+    const index=posts.value.findIndex(p=>p.id==id)
     posts.value.splice(index,1)
   }
 
