@@ -12,6 +12,7 @@
                     <div class="py-2 w-full">
                         <div class="flex items-center text-white">
                             <img :src="user ? `https://htgwagioeyowtusrvool.supabase.co/storage/v1/object/public/threads-clone/${user.id}.png`:''" alt="" class="rounded-full h-[35px]">
+                            <img :src="user.id ? `https://htgwagioeyowtusrvool.supabase.co/storage/v1/object/public/threads-clone/${user.id}.png`:''" alt="" class="rounded-full h-[35px]">
                             <div class="ml-2 font-semibold text-[18px]">{{user.email}}</div>
                         </div>
                     </div>
