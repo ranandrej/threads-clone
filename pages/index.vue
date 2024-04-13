@@ -18,14 +18,16 @@ definePageMeta({
   //   }
   // ]
   onMounted(async()=>{
-    axios.get('/api/all').then((res)=>{
+    await axios.get('/api/all').then((res)=>{
       posts.value=res.data
     })
 
   })
-  const removePost=(id)=>{
-    const index=posts.value.findIndex(p=>p.id==id)
-    posts.value.splice(index,1)
+  const removePost = (id) => {
+  const index = posts.value.findIndex(p => p.id === id)
+  if (index !== -1) {
+    posts.value.splice(index, 1)
+  }
   }
 
 </script>
