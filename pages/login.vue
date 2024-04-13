@@ -37,18 +37,10 @@ const user=useSupabaseUser()
 const supabase = useSupabaseClient()
 const email=ref('')
 const password=ref('')
-const signInWithOAuth = async () => {
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: 'github',
-    options: {
-    redirectTo: 'http://localhost:3000/'
-  }
-    
-  })
-  
+
   
  
-}
+
 const signInWithMail=async()=>{
     let { data, error } = await supabase.auth.signInWithPassword({
   email: email.value,
