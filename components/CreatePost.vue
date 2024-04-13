@@ -11,7 +11,7 @@
                 <div id="Post" class="z-40 bottom-0 max-h-[100vh-200px] w-full px-3 max-w-[500px] mx-auto py-5">
                     <div class="py-2 w-full">
                         <div class="flex items-center text-white">
-                            <img :src="`https://htgwagioeyowtusrvool.supabase.co/storage/v1/object/public/threads-clone/${user.id}.png`" alt="" class="rounded-full h-[35px]">
+                            <img :src="user ? `https://htgwagioeyowtusrvool.supabase.co/storage/v1/object/public/threads-clone/${user.id}.png`:''" alt="" class="rounded-full h-[35px]">
                             <div class="ml-2 font-semibold text-[18px]">{{user.email}}</div>
                         </div>
                     </div>
