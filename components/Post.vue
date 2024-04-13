@@ -14,7 +14,7 @@ const props=defineProps(['post'])
 const post=props.post
 console.log(props)
 onMounted(()=>{
-      if(useSupabaseUser()){
+      if(useSupabaseUser().value){
 
       
       if(useSupabaseUser().value.id==post.user.id){
@@ -27,7 +27,7 @@ onMounted(()=>{
 const deletePost=async(id)=>{
   isDeleting.value=true
    await axios.get(`/api/delete?id=${id}`).then((res)=>{
-    emit('isDeleted',id)
+    emit('isDeleted')
     alert('Successfuly deleted post!')
     isDeleting.value=false
    })
