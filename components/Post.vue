@@ -14,11 +14,15 @@ const props=defineProps(['post'])
 const post=props.post
 console.log(props)
 onMounted(()=>{
+      if(useSupabaseUser()){
+
+      
       if(useSupabaseUser().value.id==post.user.id){
         show.value=true
       }else{
         show.value=false
       }
+    }
 })
 const deletePost=async(id)=>{
   isDeleting.value=true

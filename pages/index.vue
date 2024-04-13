@@ -17,18 +17,18 @@ definePageMeta({
   //     picture:'https://placehold.co/500'
   //   }
   // ]
-  onMounted(async()=>{
+  onBeforeMount(async()=>{
     await axios.get('/api/all').then((res)=>{
       posts.value=res.data
     })
 
   })
-  const removePost = (id) => {
-  const index = posts.value.findIndex(p => p.id === id)
-  if (index !== -1) {
-    posts.value.splice(index, 1)
-  }
-  }
+  // const removePost = (id) => {
+  // const index = posts.value.findIndex(p => p.id === id)
+  // if (index !== -1) {
+  //   posts.value.splice(index, 1)
+  // }
+  // }
 
 </script>
 
@@ -42,7 +42,7 @@ definePageMeta({
         <div id="Posts" class="px-4 max-w-[600px] mx-auto">
           <div class="text-white text-3xl" v-if="isPosts" v-for="post in posts" :key="post">
             
-          <Post :post="post" @isDeleted="removePost(post.id)"/>
+          <Post :post="post" @isDeleted="posts=[]"/>
           </div>
          
         </div>
