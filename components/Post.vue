@@ -14,24 +14,24 @@ const props=defineProps(['post'])
 const post=props.post
 console.log(props)
 onMounted(()=>{
-      if(useSupabaseUser().value){
+    //   if(useSupabaseUser().value){
 
       
-      if(useSupabaseUser().value.id==post.user.id){
-        show.value=true
-      }else{
-        show.value=false
-      }
-    }
+    //   if(useSupabaseUser().value.id==post.user.id){
+    //     show.value=true
+    //   }else{
+    //     show.value=false
+    //   }
+    // }
 })
-const deletePost=async(id)=>{
-  isDeleting.value=true
-   await axios.get(`/api/delete?id=${id}`).then((res)=>{
-    emit('isDeleted')
-    alert('Successfuly deleted post!')
-    isDeleting.value=false
-   })
-}
+// const deletePost=async(id)=>{
+//   isDeleting.value=true
+//    await axios.get(`/api/delete?id=${id}`).then((res)=>{
+//     emit('isDeleted')
+//     alert('Successfuly deleted post!')
+//     isDeleting.value=false
+//    })
+// }
 const likePost=async(id)=>{
 
   const { data, error } = await supabase
@@ -69,7 +69,7 @@ const likePost=async(id)=>{
               <i v-if="!isDeleting" class="bi bi-three-dots text-2xl text-white"></i>
               </button>
               <div v-if="isMenu" class="absolute border border-gray-600 right-0 z-20 mt-1 rounded">
-                <button @click="deletePost(post.id)" class="flex items-center rounded gap-2 text-red-500 text-sm justify-between bg-black w-full pl-4 pr-3 py-1 hover:bg-gray-900">
+                <button  class="flex items-center rounded gap-2 text-red-500 text-sm justify-between bg-black w-full pl-4 pr-3 py-1 hover:bg-gray-900">
                 <div>Delete</div>
                 <i class="bi bi-trash-fill"></i>
                 </button>
