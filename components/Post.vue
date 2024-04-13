@@ -87,7 +87,7 @@ const likePost=async(id)=>{
               </div>
               <img v-if="post && post.image" :src="`https://htgwagioeyowtusrvool.supabase.co/storage/v1/object/public/threads-clone/${post.image}`" alt="" class="mx-auto w-full mt-2 pr-2 rounded">
               <div class="absolute mt-2 w-full ml-2">
-                  <button @click="likePost(post.id)" :disabled="isLike" class="flex items-center gap-1">
+                  <button :disabled="isLike" class="flex items-center gap-1">
                     <i class="bi bi-heart-fill p-1 hover:bg-gray-800 rounded-full cursor-pointer" :class="isLike ? `text-red-500`:`text-white`"></i>
                   </button>
                   <div class="relative text-sm text-gray-500">
