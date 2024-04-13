@@ -7,4 +7,5 @@ export default defineEventHandler(async(event) => {
     .from('Posts')
     .delete()
     .eq('id', query.id)
+    return error
 })

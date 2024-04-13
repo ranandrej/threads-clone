@@ -37,7 +37,7 @@ const password=ref('')
  
 
 const signInWithMail=async()=>{
-    let { data, error } = await supabase.auth.signInWithPassword({
+  let { data, error } = await supabase.auth.signInWithPassword({
   email: email.value,
   password: password.value
 })
