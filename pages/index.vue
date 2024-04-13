@@ -6,7 +6,6 @@ const userStore = useUserStore()
 let posts=ref([])
 let isPosts=ref(true)
 let isLoading=ref(false)
-const arr=ref([1,2,3,4])
 definePageMeta({
   middleware: 'auth'
 })
@@ -41,7 +40,7 @@ definePageMeta({
         <div id="Posts" class="px-4 max-w-[600px] mx-auto">
           <div class="text-white text-3xl" v-if="isPosts" v-for="post in posts" :key="post">
             
-          <Post :post="post" @isDeleted="removePost(id)"/>
+          <Post :post="post" @isDeleted="removePost(post.id)"/>
           </div>
          
         </div>

@@ -7,12 +7,7 @@
             </div>
             <div class="max-w-[350px] mx-auto px-2 text-white">
                 <div class="text-center mb-6 mt-4">Login / Register</div>
-                <button @click="signInWithOAuth" class="flex items-center justify-center gap-3 p-1.5 w-full border rounded-full text-lg font-semibold">
-                    <div class="flex items-center gap-2 justify-center">
-                        <img src="/github-logo.png" alt="" class="w-full max-w-[30px] rounded-full">
-                        Github
-                    </div>
-                </button>
+              
                 <div class="w-full flex flex-wrap justify-start p-3">
                    <input type="email" placeholder="E-mail..." class="w-full p-2 rounded-full my-2 border-gray-500 border-2 bg-black" v-model="email">
                    <input type="password" placeholder="Password" class="w-full p-2 rounded-full my-2 border-gray-500 border-2 bg-black" v-model="password">
@@ -47,7 +42,6 @@ const signInWithMail=async()=>{
   password: password.value
 })
 if (error) throw error
-console.log(data)
 navigateTo('/')
 }
 
